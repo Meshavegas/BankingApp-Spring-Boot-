@@ -18,12 +18,11 @@ public class SecurityConfig {
     private final AuthenticationProvider authentificationProvider;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.
-                csrf()
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/signup","/api/signin")
+                .requestMatchers("/api/signup", "/api/signin")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
